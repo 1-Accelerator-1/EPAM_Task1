@@ -1,0 +1,10 @@
+﻿Triangle points 3,2,5,10,10,3
+Triangle sides 6,8,10
+Square points 1,1,1,5,5,5,5,1
+Square sides 4
+Square sides 4,4,4,4
+Circle points 10,10,10,15
+Circle radius 5
+Rectangle points 2,2,2,4,7,4,7,2
+Rectangle sides 4,6,4,6
+Rectangle sides 7,10
