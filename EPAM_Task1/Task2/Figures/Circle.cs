@@ -27,15 +27,15 @@ namespace EPAM_Task1.Task2.Figures
         /// <summary>
         /// Constructor to initialize a circle through two points.
         /// </summary>
-        /// <param name="points">Two points: first point is center, second point is any point</param>
-        public Circle(IReadOnlyList<Point> points)
+        /// <param name="pointsCollection">Two points: first point is center, second point is any point</param>
+        public Circle(IReadOnlyList<Point> pointsCollection)
         {
-            if (points.Count != 2)
+            if (pointsCollection.Count != 2)
             {
                 throw new ArgumentException("The count of points is not equal to two.", "points");
             }
 
-            Radius = Math.Sqrt(Math.Pow(points[0].X - points[1].X, 2) + Math.Pow(points[0].Y - points[1].Y, 2));
+            Radius = Math.Sqrt(Math.Pow(pointsCollection[0].X - pointsCollection[1].X, 2) + Math.Pow(pointsCollection[0].Y - pointsCollection[1].Y, 2));
         }
 
         /// <inheritdoc cref="IFigure.GetArea()"/>

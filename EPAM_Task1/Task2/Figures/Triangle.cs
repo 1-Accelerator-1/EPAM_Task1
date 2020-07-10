@@ -14,39 +14,39 @@ namespace EPAM_Task1.Task2.Figures
         /// <summary>
         /// Constructor to initialize a triangle through three points.
         /// </summary>
-        /// <param name="points">Three points</param>
-        public Triangle(IReadOnlyList<Point> points)
+        /// <param name="pointsCollection">Three points</param>
+        public Triangle(IReadOnlyList<Point> pointsCollection)
         {
-            if (points.Count != 3)
+            if (pointsCollection.Count != 3)
             {
                 throw new ArgumentException("The count of points is not equal to three.", "points");
             }
 
             Sides = new List<double>();
-            for (int i = 0; i < points.Count; i++)
+            for (int i = 0; i < pointsCollection.Count; i++)
             {
-                if (i == points.Count - 1)
+                if (i == pointsCollection.Count - 1)
                 {
-                    Sides.Add(GetSide(points[i], points[0]));
+                    Sides.Add(GetSide(pointsCollection[i], pointsCollection[0]));
                     break;
                 }
 
-                Sides.Add(GetSide(points[i], points[i + 1]));
+                Sides.Add(GetSide(pointsCollection[i], pointsCollection[i + 1]));
             }
         }
 
         /// <summary>
         /// Constructor to initialize a square through one or three sides.
         /// </summary>
-        /// <param name="sides">Three sides</param>
-        public Triangle(IEnumerable<double> sides)
+        /// <param name="sidesCollection">Three sides</param>
+        public Triangle(IEnumerable<double> sidesCollection)
         {
-            if (sides.Count() != 3)
+            if (sidesCollection.Count() != 3)
             {
                 throw new ArgumentException("The count of sides is not equal to three.", "sides");
             }
 
-            Sides = sides.ToList();
+            Sides = sidesCollection.ToList();
         }
 
         /// <inheritdoc cref="IFigure.GetArea()"/>

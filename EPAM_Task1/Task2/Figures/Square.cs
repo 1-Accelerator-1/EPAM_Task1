@@ -14,30 +14,30 @@ namespace EPAM_Task1.Task2.Figures
         /// <summary>
         /// Constructor to initialize a square through four points.
         /// </summary>
-        /// <param name="points">Four points</param>
-        public Square(IReadOnlyList<Point> points)
+        /// <param name="pointsCollection">Four points</param>
+        public Square(IReadOnlyList<Point> pointsCollection)
         {
-            if (points.Count != 4)
+            if (pointsCollection.Count != 4)
             {
                 throw new ArgumentException("The count of points is not equal to four.", "points");
             }
 
             Sides = new List<double>();
-            Sides.Add(GetSide(points[0], points[1]));
+            Sides.Add(GetSide(pointsCollection[0], pointsCollection[1]));
         }
 
         /// <summary>
         /// Constructor to initialize a square through one or four sides.
         /// </summary>
-        /// <param name="sides">One or four sides</param>
-        public Square(IEnumerable<double> sides)
+        /// <param name="sidesCollection">One or four sides</param>
+        public Square(IEnumerable<double> sidesCollection)
         {
-            if (sides.Count() != 1 && sides.Count() != 4)
+            if (sidesCollection.Count() != 1 && sidesCollection.Count() != 4)
             {
                 throw new ArgumentException("The count of sides is not equal to one or four.", "sides");
             }
 
-            Sides = sides.ToList();
+            Sides = sidesCollection.ToList();
         }
 
         /// <inheritdoc cref="IFigure.GetArea()"/>

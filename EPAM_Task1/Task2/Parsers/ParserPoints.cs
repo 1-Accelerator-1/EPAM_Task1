@@ -10,14 +10,14 @@ namespace EPAM_Task1.Task2.Parsers
         /// <summary>
         /// The method parses a collection of strings into a list of points.
         /// </summary>
-        /// <param name="coords">Point list for parsing</param>
+        /// <param name="coordsCollection">Point list for parsing</param>
         /// <returns>Point list</returns>
-        public static List<Point> ParseToPoints(IReadOnlyList<string> coords)
+        public static List<Point> ParseToPoints(IReadOnlyList<string> coordsCollection)
         {
             var points = new List<Point>();
-            for (int i = 0; i < coords.Count; i += 2)
+            for (int i = 0; i < coordsCollection.Count; i += 2)
             {
-                points.Add(new Point(int.Parse(coords[i]), int.Parse(coords[i + 1])));
+                points.Add(new Point(int.Parse(coordsCollection[i]), int.Parse(coordsCollection[i + 1])));
             }
 
             return points;

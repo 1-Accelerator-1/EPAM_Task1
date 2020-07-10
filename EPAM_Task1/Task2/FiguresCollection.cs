@@ -14,10 +14,10 @@ namespace EPAM_Task1.Task2
         /// <summary>
         /// Constructor to initialize figure collcetion.
         /// </summary>
-        /// <param name="figures">Figure collcetion</param>
-        public FiguresCollection(IEnumerable<IFigure> figures)
+        /// <param name="figuresCollection">Figure collcetion</param>
+        public FiguresCollection(IEnumerable<IFigure> figuresCollection)
         {
-            _figures = figures.ToList();
+            _figures = figuresCollection.ToList();
         }
 
         /// <summary>

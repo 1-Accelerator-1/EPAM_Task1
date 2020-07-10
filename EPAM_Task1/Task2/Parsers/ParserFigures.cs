@@ -17,13 +17,13 @@ namespace EPAM_Task1.Task2.Parsers
         /// <summary>
         /// The method parses a collection of strings into a list of figures.
         /// </summary>
-        /// <param name="textFigures">String collection for parsing</param>
+        /// <param name="textFiguresCollection">String collection for parsing</param>
         /// <returns>Figures List</returns>
-        public static List<IFigure> ParseToArrayFigures(IEnumerable<string> textFigures)
+        public static List<IFigure> ParseToArrayFigures(IEnumerable<string> textFiguresCollection)
         {
             List<IFigure> figures = new List<IFigure>();
 
-            foreach (var textFigure in textFigures)
+            foreach (var textFigure in textFiguresCollection)
             {
                 var figure = textFigure.Split(Space);
                 var figureType = Enum.Parse(typeof(FigureTypes), figure[0]);

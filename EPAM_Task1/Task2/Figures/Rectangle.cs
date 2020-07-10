@@ -14,39 +14,39 @@ namespace EPAM_Task1.Task2.Figures
         /// <summary>
         /// Constructor to initialize a rectangle through four points.
         /// </summary>
-        /// <param name="points">Four points</param>
-        public Rectangle(IReadOnlyList<Point> points)
+        /// <param name="pointsCollection">Four points</param>
+        public Rectangle(IReadOnlyList<Point> pointsCollection)
         {
-            if (points.Count != 4)
+            if (pointsCollection.Count != 4)
             {
                 throw new ArgumentException("The count of points is not equal to four.", "points");
             }
 
             Sides = new List<double>();
-            for (int i = 0; i < points.Count; i++)
+            for (int i = 0; i < pointsCollection.Count; i++)
             {
-                if (i == points.Count - 1)
+                if (i == pointsCollection.Count - 1)
                 {
-                    Sides.Add(GetSide(points[i], points[0]));
+                    Sides.Add(GetSide(pointsCollection[i], pointsCollection[0]));
                     break;
                 }
 
-                Sides.Add(GetSide(points[i], points[i + 1]));
+                Sides.Add(GetSide(pointsCollection[i], pointsCollection[i + 1]));
             }
         }
 
         /// <summary>
         /// Constructor to initialize a rectangle through two or four sides.
         /// </summary>
-        /// <param name="sides">Two or four sides</param>
-        public Rectangle(IEnumerable<double> sides)
+        /// <param name="sidesCollection">Two or four sides</param>
+        public Rectangle(IEnumerable<double> sidesCollection)
         {
-            if (sides.Count() != 2 && sides.Count() != 4)
+            if (sidesCollection.Count() != 2 && sidesCollection.Count() != 4)
             {
                 throw new ArgumentException("The count of sides is not equal to two or four.", "sides");
             }
 
-            Sides = sides.ToList();
+            Sides = sidesCollection.ToList();
         }
 
         /// <inheritdoc cref="IFigure.GetArea()"/>
